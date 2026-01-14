@@ -18,7 +18,7 @@ public class TestController : ControllerBase
         
         // Convert PostgreSQL URL to Npgsql connection string format if needed
         _connectionString = ConvertPostgresUrlToConnectionString(rawConnectionString);
-        throw new Exception();
+       
     }
     
     private string ConvertPostgresUrlToConnectionString(string connectionString)
@@ -138,6 +138,9 @@ public class TestController : ControllerBase
             using var cmd = new NpgsqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("id", id);
             using var reader = await cmd.ExecuteReaderAsync();
+
+             throw new Exception();
+            
             if (await reader.ReadAsync())
             {
                 return Ok(new TestProjects
