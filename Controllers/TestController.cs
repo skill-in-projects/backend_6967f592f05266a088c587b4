@@ -18,7 +18,7 @@ public class TestController : ControllerBase
         
         // Convert PostgreSQL URL to Npgsql connection string format if needed
         _connectionString = ConvertPostgresUrlToConnectionString(rawConnectionString);
-        throw;
+        
     }
     
     private string ConvertPostgresUrlToConnectionString(string connectionString)
