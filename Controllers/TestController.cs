@@ -139,7 +139,7 @@ public class TestController : ControllerBase
             cmd.Parameters.AddWithValue("id", id);
             using var reader = await cmd.ExecuteReaderAsync();
 
-             throw new Exception();
+            throw new Exception();
             
             if (await reader.ReadAsync())
             {
